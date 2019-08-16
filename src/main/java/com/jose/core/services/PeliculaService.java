@@ -28,7 +28,12 @@ public class PeliculaService {
 		return peliculaRepository.findByNombre(nombre);
 	}
 	
-	public void guardarPelicula(Pelicula pelicula) {
-		peliculaRepository.save(pelicula);
+	public boolean guardarPelicula(Pelicula pelicula) {
+		try {
+			peliculaRepository.save(pelicula);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 }
