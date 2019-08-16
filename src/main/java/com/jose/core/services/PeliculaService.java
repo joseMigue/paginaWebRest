@@ -15,6 +15,15 @@ public class PeliculaService {
 	private PeliculaRepository peliculaRepository;
 	
 	
+	public boolean borrar(int id) {
+		try {
+			peliculaRepository.deleteById(id);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
+		
+	}
 	public List<Pelicula> listaPelicula(){
 		return  peliculaRepository.findAll();
 	}
